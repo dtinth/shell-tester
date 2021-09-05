@@ -1,0 +1,25 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/api-extractor/v7/api-extractor.schema.json",
+  "mainEntryPointFilePath": "<projectFolder>/tmp/typings/index.d.ts",
+  "apiReport": {
+    "enabled": true,
+    "reportFolder": "<projectFolder>/api",
+    "reportTempFolder": "<projectFolder>/tmp/api"
+  },
+  "docModel": {
+    "enabled": true,
+    "apiJsonFilePath": "<projectFolder>/tmp/api/<unscopedPackageName>.api.json"
+  },
+  "dtsRollup": {
+    "enabled": true,
+    "untrimmedFilePath": "",
+    "publicTrimmedFilePath": "<projectFolder>/api/<unscopedPackageName>.d.ts"
+  },
+  "messages": {
+    "tsdocMessageReporting": {
+      "tsdoc-param-tag-with-invalid-type": {
+        "logLevel": "none"
+      }
+    }
+  }
+}

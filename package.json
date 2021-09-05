@@ -3,11 +3,13 @@
   "version": "1.0.0",
   "description": "A library to test shell setups",
   "main": "index.js",
+  "types": "api/shell-tester.d.ts",
   "directories": {
     "lib": "lib"
   },
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "api": "tsc && api-extractor run --local --verbose"
   },
   "repository": {
     "type": "git",
@@ -25,5 +27,10 @@
     "node-pty": "^0.10.1",
     "xterm": "4.14.0-beta.22",
     "xterm-headless": "4.14.0-beta.22"
+  },
+  "devDependencies": {
+    "@microsoft/api-documenter": "^7.13.44",
+    "@microsoft/api-extractor": "^7.18.7",
+    "typescript": "^4.4.2"
   }
 }
