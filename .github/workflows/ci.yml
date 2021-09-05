@@ -18,7 +18,7 @@ jobs:
         run: yarn api
       - uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: Update generated files as of {{ github.sha }}
+          commit_message: Update generated files as of ${{ github.sha }}
           file_pattern: api
           commit_user_name: dtinth-bot
           commit_user_email: dtinth-bot@users.noreply.github.com
