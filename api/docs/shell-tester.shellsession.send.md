@@ -4,6 +4,12 @@
 
 ## ShellSession.send() method
 
+Send a string to the terminal.
+
+Note that newline characters will \*\*not\*\* be added automatically. To send a newline, use `\r`<!-- -->.
+
+You can also send control characters such as `\x03` (^C).
+
 <b>Signature:</b>
 
 ```typescript

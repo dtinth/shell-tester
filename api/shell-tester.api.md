@@ -8,15 +8,14 @@ import { Terminal } from 'xterm-headless';
 
 // @public (undocumented)
 export class ShellSession {
+    // @internal
     constructor(ptyProcess: any);
-    // (undocumented)
     capture(name: any, extra?: {}): Promise<void>;
     // @internal (undocumented)
     _events: {
         time: number;
         type: string;
     }[];
-    // (undocumented)
     expect(str: any, timeoutMs?: number): Promise<void>;
     // @internal (undocumented)
     _listeners: Set<any>;
@@ -24,11 +23,8 @@ export class ShellSession {
     _output: string;
     // @internal (undocumented)
     _ptyProcess: any;
-    // (undocumented)
-    resize(cols: any, rows: any): Promise<void>;
-    // (undocumented)
+    resize(cols?: number, rows?: number): Promise<void>;
     retry(callback: any, timeoutMs?: number): Promise<any>;
-    // (undocumented)
     send(data: any): Promise<void>;
     // Warning: (ae-forgotten-export) The symbol "Stabilizer" needs to be exported by the entry point index.d.ts
     //
@@ -38,19 +34,17 @@ export class ShellSession {
     _term: Terminal;
 }
 
-// @public (undocumented)
+// @public
 export class ShellTester {
-    constructor({ shellCommand, }?: {
-        shellCommand?: string;
+    constructor({ shellCommand }?: {
+        shellCommand: string;
     });
-    // (undocumented)
     run(argv?: string[]): Promise<void>;
     // @internal (undocumented)
     _runSession({ name, callback }: {
         name: any;
         callback: any;
     }): Promise<void>;
-    // (undocumented)
     session(name: string, callback: (session: ShellSession) => Promise<void>): void;
     // @internal (undocumented)
     _sessionsDefinitions: any[];

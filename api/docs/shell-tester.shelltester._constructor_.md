@@ -9,8 +9,8 @@ Constructs a new instance of the `ShellTester` class
 <b>Signature:</b>
 
 ```typescript
-constructor({ shellCommand, }?: {
-        shellCommand?: string;
+constructor({ shellCommand }?: {
+        shellCommand: string;
     });
 ```
 
@@ -18,5 +18,5 @@ constructor({ shellCommand, }?: {
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  { shellCommand, } | { shellCommand?: string; } |  |
+|  { shellCommand } | { shellCommand: string; } |  |
 

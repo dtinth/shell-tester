@@ -4,26 +4,23 @@
 
 ## ShellSession class
 
-
 <b>Signature:</b>
 
 ```typescript
 export class ShellSession 
 ```
 
-## Constructors
+## Remarks
 
-|  Constructor | Modifiers | Description |
-|  --- | --- | --- |
-|  [(constructor)(ptyProcess)](./shell-tester.shellsession._constructor_.md) |  | Constructs a new instance of the <code>ShellSession</code> class |
+The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ShellSession` class.
 
 ## Methods
 
 |  Method | Modifiers | Description |
 |  --- | --- | --- |
-|  [capture(name, extra)](./shell-tester.shellsession.capture.md) |  |  |
-|  [expect(str, timeoutMs)](./shell-tester.shellsession.expect.md) |  |  |
-|  [resize(cols, rows)](./shell-tester.shellsession.resize.md) |  |  |
-|  [retry(callback, timeoutMs)](./shell-tester.shellsession.retry.md) |  |  |
-|  [send(data)](./shell-tester.shellsession.send.md) |  |  |
+|  [capture(name, extra)](./shell-tester.shellsession.capture.md) |  | Captures the current terminal state into a file. It also prints the terminal state to the console.<!-- -->It will be written to <code>tmp/output/${name}.js</code> and will begin with <code>SESSION_DATA=</code>, followed by the JSON-encoded session data.<!-- -->The session data will contain:<!-- -->- <code>events</code>: an array of events, each event being an object with the following properties: - <code>time</code>: the time at which the event occurred, in milliseconds since the Unix epoch - <code>type</code>: the type of event, one of: - <code>started</code>: the session has started - <code>output</code>: the terminal has output some text - <code>send</code>: the script has sent some data into the terminal - <code>resize</code>: the terminal has been resized - <code>data</code>: the data that was sent or received - <code>cols</code>: the number of columns in the terminal - <code>rows</code>: the number of rows in the terminal - <code>text</code>: the text that was output by the terminal (an array of lines)<!-- -->Extra properties may be added to the session by passing the <code>extra</code> argument. |
+|  [expect(str, timeoutMs)](./shell-tester.shellsession.expect.md) |  | Waits for the given string to be printed on the terminal. Gives up once <code>timeoutMs</code> has elapsed. |
+|  [resize(cols, rows)](./shell-tester.shellsession.resize.md) |  | Resizes the terminal. |
+|  [retry(callback, timeoutMs)](./shell-tester.shellsession.retry.md) |  | Calls the given <code>callback()</code> function repeatedly until it no longer throws an error. Gives up once <code>timeoutMs</code> has elapsed. |
+|  [send(data)](./shell-tester.shellsession.send.md) |  | Send a string to the terminal.<!-- -->Note that newline characters will \*\*not\*\* be added automatically. To send a newline, use <code>\r</code>.<!-- -->You can also send control characters such as <code>\x03</code> (^C). |
 

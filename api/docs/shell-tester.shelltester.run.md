@@ -4,6 +4,8 @@
 
 ## ShellTester.run() method
 
+Runs the registered sessions.
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,7 +16,7 @@ run(argv?: string[]): Promise<void>;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  argv | string\[\] |  |
+|  argv | string\[\] | The command line arguments. If no argument is passed, it will run all the registered sessions. If an argument is passed, it will run only the session with the matching name. |
 
 <b>Returns:</b>
 

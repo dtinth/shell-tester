@@ -4,6 +4,16 @@
 
 ## ShellSession.capture() method
 
+Captures the current terminal state into a file. It also prints the terminal state to the console.
+
+It will be written to `tmp/output/${name}.js` and will begin with `SESSION_DATA=`<!-- -->, followed by the JSON-encoded session data.
+
+The session data will contain:
+
+- `events`<!-- -->: an array of events, each event being an object with the following properties: - `time`<!-- -->: the time at which the event occurred, in milliseconds since the Unix epoch - `type`<!-- -->: the type of event, one of: - `started`<!-- -->: the session has started - `output`<!-- -->: the terminal has output some text - `send`<!-- -->: the script has sent some data into the terminal - `resize`<!-- -->: the terminal has been resized - `data`<!-- -->: the data that was sent or received - `cols`<!-- -->: the number of columns in the terminal - `rows`<!-- -->: the number of rows in the terminal - `text`<!-- -->: the text that was output by the terminal (an array of lines)
+
+Extra properties may be added to the session by passing the `extra` argument.
+
 <b>Signature:</b>
 
 ```typescript

@@ -4,18 +4,20 @@
 
 ## ShellSession.resize() method
 
+Resizes the terminal.
+
 <b>Signature:</b>
 
 ```typescript
-resize(cols: any, rows: any): Promise<void>;
+resize(cols?: number, rows?: number): Promise<void>;
 ```
 
 ## Parameters
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  cols | any |  |
-|  rows | any |  |
+|  cols | number |  |
+|  rows | number |  |
 
 <b>Returns:</b>
 

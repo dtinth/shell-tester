@@ -4,6 +4,7 @@
 
 ## ShellTester class
 
+API for the `shell-tester` library. Create a `ShellTester` instance to test your shell setup.
 
 <b>Signature:</b>
 
@@ -15,12 +16,12 @@ export class ShellTester
 
 |  Constructor | Modifiers | Description |
 |  --- | --- | --- |
-|  [(constructor)({ shellCommand, })](./shell-tester.shelltester._constructor_.md) |  | Constructs a new instance of the <code>ShellTester</code> class |
+|  [(constructor)({ shellCommand })](./shell-tester.shelltester._constructor_.md) |  | Constructs a new instance of the <code>ShellTester</code> class |
 
 ## Methods
 
 |  Method | Modifiers | Description |
 |  --- | --- | --- |
-|  [run(argv)](./shell-tester.shelltester.run.md) |  |  |
-|  [session(name, callback)](./shell-tester.shelltester.session.md) |  |  |
+|  [run(argv)](./shell-tester.shelltester.run.md) |  | Runs the registered sessions. |
+|  [session(name, callback)](./shell-tester.shelltester.session.md) |  | Register a new session to be tested. The session will not be run until <code>run()</code> is called. |
 

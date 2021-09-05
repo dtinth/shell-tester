@@ -4,6 +4,8 @@
 
 ## ShellSession.retry() method
 
+Calls the given `callback()` function repeatedly until it no longer throws an error. Gives up once `timeoutMs` has elapsed.
+
 <b>Signature:</b>
 
 ```typescript

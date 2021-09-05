@@ -4,6 +4,8 @@
 
 ## ShellTester.session() method
 
+Register a new session to be tested. The session will not be run until `run()` is called.
+
 <b>Signature:</b>
 
 ```typescript
@@ -14,8 +16,8 @@ session(name: string, callback: (session: ShellSession) => Promise<void>): void;
 
 |  Parameter | Type | Description |
 |  --- | --- | --- |
-|  name | string | The session name |
-|  callback | (session: [ShellSession](./shell-tester.shellsession.md)<!-- -->) =&gt; Promise&lt;void&gt; | An async function that automates this shell session |
+|  name | string | The session name. This can be used to filter the session to be run from the command line. |
+|  callback | (session: [ShellSession](./shell-tester.shellsession.md)<!-- -->) =&gt; Promise&lt;void&gt; | An async function that automates this shell session. The function will be called with a [ShellSession](./shell-tester.shellsession.md) instance. |
 
 <b>Returns:</b>
 

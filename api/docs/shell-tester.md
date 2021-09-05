@@ -9,5 +9,5 @@
 |  Class | Description |
 |  --- | --- |
 |  [ShellSession](./shell-tester.shellsession.md) |  |
-|  [ShellTester](./shell-tester.shelltester.md) |  |
+|  [ShellTester](./shell-tester.shelltester.md) | API for the <code>shell-tester</code> library. Create a <code>ShellTester</code> instance to test your shell setup. |
 

@@ -4,6 +4,8 @@
 
 ## ShellSession.expect() method
 
+Waits for the given string to be printed on the terminal. Gives up once `timeoutMs` has elapsed.
+
 <b>Signature:</b>
 
 ```typescript
