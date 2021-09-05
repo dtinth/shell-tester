@@ -1,0 +1,7 @@
+= shell-tester
+
+A little library to create automated tests for shell setups.
+When a test is run, it also generates a detailed output of the shell session,
+which can be used to create screenshots or videos of the test.
+
+I use this library to xref:dotfiles::index.adoc[test my dotfiles and generate example screenshots for my shell setup].
