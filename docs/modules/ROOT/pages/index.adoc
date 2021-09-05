@@ -31,9 +31,11 @@ For more detailed examples, see the https://github.com/dtinth/shell-tester/blob/
 
 == Installation
 
-This module is **not published on npm**. To install it directly from GitHub, run:
+This module is **not versioned** and is **not published on npm**. To install it directly from GitHub, run:
 
- $ yarn add dtinth/shell-tester
+ $ yarn add "dtinth/shell-tester#main"
+
+TIP: To pin the dependency in your `package.json` file and prevent breaking changes from affecting your project, replace `main` with the SHA of the https://github.com/dtinth/shell-tester/commit/main[latest commit].
 
 == Running
 
