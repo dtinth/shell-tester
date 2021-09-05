@@ -1,0 +1,29 @@
+{
+  "name": "shell-tester",
+  "version": "1.0.0",
+  "description": "A library to test shell setups",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dtinth/shell-tester.git"
+  },
+  "author": "dtinth <dtinth@spacet.me>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dtinth/shell-tester/issues"
+  },
+  "homepage": "https://github.com/dtinth/shell-tester#readme",
+  "dependencies": {
+    "make-promises-safe": "^5.1.0",
+    "mkdirp": "^1.0.4",
+    "node-pty": "^0.10.1",
+    "xterm": "4.14.0-beta.22",
+    "xterm-headless": "4.14.0-beta.22"
+  }
+}

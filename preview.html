@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="node_modules/xterm/css/xterm.css" />
+    <script src="node_modules/xterm/lib/xterm.js"></script>
+    <style>
+      body {
+        background: black;
+      }
+      .xterm .xterm-viewport {
+        overflow-y: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="terminal"></div>
+    <script>
+      const dataFile = new URLSearchParams(window.location.search).get('data')
+      document.write('<script src="' + dataFile + '"><\/script>')
+    </script>
+    <script>
+      function show(data) {
+        const terminalElement = document.getElementById('terminal')
+        terminalElement.innerHTML = ''
+        const container = document.createElement('div')
+        terminalElement.appendChild(container)
+        const term = new Terminal({
+          cols: data.cols,
+          rows: data.rows,
+        })
+        const output = data.events
+          .map((e) => (e.type === 'output' ? e.data : ''))
+          .join('')
+        term.open(container)
+        term.write(output)
+      }
+      if (typeof SESSION_DATA !== 'undefined') {
+        show(SESSION_DATA)
+      }
+    </script>
+  </body>
+</html>
