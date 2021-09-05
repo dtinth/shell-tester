@@ -1,6 +1,6 @@
 {
   "name": "shell-tester",
-  "version": "1.0.0",
+  "version": "0.0.0-0",
   "description": "A library to test shell setups",
   "main": "lib/index.js",
   "types": "api/shell-tester.d.ts",
