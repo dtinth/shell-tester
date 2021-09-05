@@ -5,3 +5,45 @@ When a test is run, it also generates a detailed output of the shell session,
 which can be used to create screenshots or videos of the test.
 
 I use this library to xref:dotfiles::index.adoc[test my dotfiles and generate example screenshots for my shell setup].
+
+== Example
+
+[source,js]
+.example.js
+----
+const { ShellTester } = require('shell-tester')
+const tester = new ShellTester({ shellCommand: 'sh' })
+
+tester.session('example', async (s) => {
+  await s.expect('$')
+  await s.send('ls\r')
+  await s.expect('package.json')
+})
+
+tester.run()
+----
+
+For more detailed examples, see the https://github.com/dtinth/shell-tester/blob/main/test.js[test.js] file.
+
+== Installation
+
+This module is **not published on npm**. To install it directly from GitHub, run:
+
+ $ yarn add dtinth/shell-tester
+
+== Running
+
+The test script can be run directly using Node.js:
+
+ $ node example.js
+
+== Output file
+
+This will generate a file called `tmp/output/example_end.js` in the current directory
+which contains the detailed output of the shell session.
+
+A simple HTML viewer can be used to view the output:
+
+ $ echo "file://$PWD/node_modules/shell-tester/preview.html?data=../../tmp/output/example_end.js"
+
+(Open the URL in your browser to see the output.)
