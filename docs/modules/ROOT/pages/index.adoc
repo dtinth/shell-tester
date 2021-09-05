@@ -12,16 +12,20 @@ I use this library to xref:dotfiles::index.adoc[test my dotfiles and generate ex
 .example.js
 ----
 const { ShellTester } = require('shell-tester')
-const tester = new ShellTester({ shellCommand: 'sh' })
+const tester = new ShellTester({ shellCommand: 'sh' }) <1>
 
-tester.session('example', async (s) => {
-  await s.expect('$')
+tester.session('example', async (s) => { <2>
+  await s.expect('$') <3>
   await s.send('ls\r')
   await s.expect('package.json')
 })
 
-tester.run()
+tester.run() <4>
 ----
+<1> Create a https://github.com/dtinth/shell-tester/blob/main/api/docs/shell-tester.shelltester.md[`ShellTester`] and specify the shell command to use.
+<2> Register a test session using the https://github.com/dtinth/shell-tester/blob/main/api/docs/shell-tester.shelltester.session.md[`session`] method.
+<3> Automate the shell using the provided https://github.com/dtinth/shell-tester/blob/main/api/docs/shell-tester.shellsession.md[`ShellSession`] object.
+<4> Run the registered sessions by calling the https://github.com/dtinth/shell-tester/blob/main/api/docs/shell-tester.shelltester.run.md[`run`] method.
 
 For more detailed examples, see the https://github.com/dtinth/shell-tester/blob/main/test.js[test.js] file.
 
