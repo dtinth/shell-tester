@@ -9,7 +9,7 @@
   },
   "scripts": {
     "test": "node test.js",
-    "api": "tsc && api-extractor run --local --verbose"
+    "api": "tsc && mkdir -p api && api-extractor run --local --verbose"
   },
   "repository": {
     "type": "git",
