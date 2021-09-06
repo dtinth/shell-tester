@@ -18,6 +18,23 @@ export class ShellSession {
 }
 
 // @public
+export interface ShellSessionCapturedData {
+    cols: number;
+    events: ShellSessionEvent[];
+    rows: number;
+    text: string[];
+}
+
+// @public
+export interface ShellSessionEvent {
+    cols?: number;
+    data?: string;
+    rows?: number;
+    time: number;
+    type: 'started' | 'output' | 'send' | 'resize';
+}
+
+// @public
 export class ShellTester {
     constructor(options?: ShellTesterOptions);
     run(argv?: string[]): Promise<void>;

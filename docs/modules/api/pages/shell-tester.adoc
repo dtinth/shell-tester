@@ -9,4 +9,6 @@
 
 == Interfaces
 
+* xref:shell-tester_ShellSessionCapturedData_interface.adoc[ShellSessionCapturedData]
+* xref:shell-tester_ShellSessionEvent_interface.adoc[ShellSessionEvent]
 * xref:shell-tester_ShellTesterOptions_interface.adoc[ShellTesterOptions]
