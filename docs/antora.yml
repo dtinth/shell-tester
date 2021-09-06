@@ -3,3 +3,4 @@ version: master
 title: 'shell-tester'
 nav:
   - modules/ROOT/nav.adoc
+  - modules/api/nav.adoc
