@@ -9,7 +9,8 @@
   },
   "scripts": {
     "test": "node test.js",
-    "api": "rm -rf lib && tsc && mkdir -p api && api-extractor run --local --verbose && api-documenter yaml -i tmp/api -o tmp/api-yaml && rm -rf docs/modules/api && api-documenter-yaml-to-antora-asciidoc asciidoc -i tmp/api-yaml"
+    "prepare": "rm -rf lib && tsc",
+    "api": "mkdir -p api && api-extractor run --local --verbose && api-documenter yaml -i tmp/api -o tmp/api-yaml && rm -rf docs/modules/api && api-documenter-yaml-to-antora-asciidoc asciidoc -i tmp/api-yaml"
   },
   "repository": {
     "type": "git",
