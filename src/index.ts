@@ -150,6 +150,9 @@ export class ShellSession {
 
   /**
    * Resizes the terminal.
+   *
+   * @param cols - The number of columns.
+   * @param rows - The number of rows.
    */
   async resize(cols = this._term.cols, rows = this._term.rows) {
     await this._stabilizer.waitUntilStabilized()
@@ -166,6 +169,9 @@ export class ShellSession {
   /**
    * Waits for the given string to be printed on the terminal.
    * Gives up once `timeoutMs` has elapsed.
+   *
+   * @param str - The text to wait for.
+   * @param timeoutMs - The timeout in milliseconds.
    */
   async expect(str: string, timeoutMs = 10000) {
     await new Promise<void>((resolve, reject) => {
@@ -192,6 +198,9 @@ export class ShellSession {
   /**
    * Calls the given `callback()` function repeatedly until it no longer throws an error.
    * Gives up once `timeoutMs` has elapsed.
+   *
+   * @param callback - The function to call.
+   * @param timeoutMs - The timeout in milliseconds.
    */
   async retry<T>(callback: () => Promise<T>, timeoutMs = 20000) {
     const start = Date.now()
@@ -213,6 +222,8 @@ export class ShellSession {
    * To send a newline, use `\r`.
    *
    * You can also send control characters such as `\x03` (^C).
+   *
+   * @param data - The string to send.
    */
   async send(data: string) {
     await this._stabilizer.waitUntilStabilized()
@@ -234,6 +245,9 @@ export class ShellSession {
    * {@link ShellSessionCapturedData | session data}.
    *
    * Extra properties may be added to the session by passing the `extra` argument.
+   *
+   * @param name - The name of the capture file.
+   * @param extra - Extra properties to add to the captured session data.
    */
   async capture(name: string, extra: Record<string, any> = {}) {
     const term = this._term
