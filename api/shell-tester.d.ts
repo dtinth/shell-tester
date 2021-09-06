@@ -13,16 +13,25 @@ export declare class ShellSession {
     /* Excluded from this release type: __constructor */
     /**
      * Resizes the terminal.
+     *
+     * @param cols - The number of columns.
+     * @param rows - The number of rows.
      */
     resize(cols?: number, rows?: number): Promise<void>;
     /**
      * Waits for the given string to be printed on the terminal.
      * Gives up once `timeoutMs` has elapsed.
+     *
+     * @param str - The text to wait for.
+     * @param timeoutMs - The timeout in milliseconds.
      */
     expect(str: string, timeoutMs?: number): Promise<void>;
     /**
      * Calls the given `callback()` function repeatedly until it no longer throws an error.
      * Gives up once `timeoutMs` has elapsed.
+     *
+     * @param callback - The function to call.
+     * @param timeoutMs - The timeout in milliseconds.
      */
     retry<T>(callback: () => Promise<T>, timeoutMs?: number): Promise<T>;
     /**
@@ -32,6 +41,8 @@ export declare class ShellSession {
      * To send a newline, use `\r`.
      *
      * You can also send control characters such as `\x03` (^C).
+     *
+     * @param data - The string to send.
      */
     send(data: string): Promise<void>;
     /**
@@ -43,6 +54,9 @@ export declare class ShellSession {
      * {@link ShellSessionCapturedData | session data}.
      *
      * Extra properties may be added to the session by passing the `extra` argument.
+     *
+     * @param name - The name of the capture file.
+     * @param extra - Extra properties to add to the captured session data.
      */
     capture(name: string, extra?: Record<string, any>): Promise<void>;
 }

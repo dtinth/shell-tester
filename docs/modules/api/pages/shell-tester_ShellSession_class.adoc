@@ -22,11 +22,11 @@ Extra properties may be added to the session by passing the `extra` argument.
 
 m|name
 m|string
-|
+|The name of the capture file.
 
 m|extra
 m|Record&lt;string, any&gt;
-|
+|Extra properties to add to the captured session data.
 
 s|Returns
 m|Promise&lt;void&gt;
@@ -54,11 +54,11 @@ Waits for the given string to be printed on the terminal. Gives up once `timeout
 
 m|str
 m|string
-|
+|The text to wait for.
 
 m|timeoutMs
 m|number
-|
+|The timeout in milliseconds.
 
 s|Returns
 m|Promise&lt;void&gt;
@@ -86,11 +86,11 @@ Resizes the terminal.
 
 m|cols
 m|number
-|
+|The number of columns.
 
 m|rows
 m|number
-|
+|The number of rows.
 
 s|Returns
 m|Promise&lt;void&gt;
@@ -118,11 +118,11 @@ Calls the given `callback()` function repeatedly until it no longer throws an er
 
 m|callback
 m|() =&gt; Promise&lt;T&gt;
-|
+|The function to call.
 
 m|timeoutMs
 m|number
-|
+|The timeout in milliseconds.
 
 s|Returns
 m|Promise&lt;T&gt;
@@ -154,7 +154,7 @@ You can also send control characters such as `\x03` (^C).
 
 m|data
 m|string
-|
+|The string to send.
 
 s|Returns
 m|Promise&lt;void&gt;
