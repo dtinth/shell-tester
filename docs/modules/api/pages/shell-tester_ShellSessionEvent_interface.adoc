@@ -1,0 +1,81 @@
+= interface ShellSessionEvent
+
+An event that occurred during a session.
+
+== Properties
+
+[id="shell-tester_ShellSessionEvent_cols_member"]
+=== cols
+
+========
+
+The number of columns in the terminal (for `resize` events).
+
+
+.Signature
+[source,typescript]
+----
+cols?: number;
+----
+
+========
+[id="shell-tester_ShellSessionEvent_data_member"]
+=== data
+
+========
+
+The data that was sent or received (for `output` and `send` events).
+
+
+.Signature
+[source,typescript]
+----
+data?: string;
+----
+
+========
+[id="shell-tester_ShellSessionEvent_rows_member"]
+=== rows
+
+========
+
+The number of rows in the terminal (for `resize` events).
+
+
+.Signature
+[source,typescript]
+----
+rows?: number;
+----
+
+========
+[id="shell-tester_ShellSessionEvent_time_member"]
+=== time
+
+========
+
+The time at which the event occurred, in milliseconds since the Unix epoch.
+
+
+.Signature
+[source,typescript]
+----
+time: number;
+----
+
+========
+[id="shell-tester_ShellSessionEvent_type_member"]
+=== type
+
+========
+
+The type of event.
+
+
+.Signature
+[source,typescript]
+----
+type: 'started' | 'output' | 'send' | 'resize';
+----
+
+========

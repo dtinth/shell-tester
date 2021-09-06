@@ -1,0 +1,66 @@
+= interface ShellSessionCapturedData
+
+The data captured by xref:shell-tester_ShellSession_class.adoc#shell-tester_ShellSession_capture_member_1[ShellSession#capture]. It may contain extra properties, as specified by the `extra` argument to xref:shell-tester_ShellSession_class.adoc#shell-tester_ShellSession_capture_member_1[ShellSession#capture].
+
+== Properties
+
+[id="shell-tester_ShellSessionCapturedData_cols_member"]
+=== cols
+
+========
+
+The number of columns in the terminal, as of the time when `capture()` was called.
+
+
+.Signature
+[source,typescript]
+----
+cols: number;
+----
+
+========
+[id="shell-tester_ShellSessionCapturedData_events_member"]
+=== events
+
+========
+
+The events that occurred during the session, up to the point when `capture()` was called.
+
+
+.Signature
+[source,typescript]
+----
+events: ShellSessionEvent[];
+----
+
+========
+[id="shell-tester_ShellSessionCapturedData_rows_member"]
+=== rows
+
+========
+
+The number of rows in the terminal, as of the time when `capture()` was called.
+
+
+.Signature
+[source,typescript]
+----
+rows: number;
+----
+
+========
+[id="shell-tester_ShellSessionCapturedData_text_member"]
+=== text
+
+========
+
+The text snapshot that was rendered to the terminal, as of the time when `capture()` was called. Each element is a line of text.
+
+
+.Signature
+[source,typescript]
+----
+text: string[];
+----
+
+========

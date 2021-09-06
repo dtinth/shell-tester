@@ -40,25 +40,64 @@ export declare class ShellSession {
      *
      * It will be written to `tmp/output/${name}.js` and will
      * begin with `SESSION_DATA=`, followed by the JSON-encoded
-     * session data.
-     *
-     * The session data will contain:
-     *
-     * - `events`: an array of events, each event being an object with the following properties:
-     *   - `time`: the time at which the event occurred, in milliseconds since the Unix epoch
-     *   - `type`: the type of event, one of:
-     *     - `started`: the session has started
-     *     - `output`: the terminal has output some text
-     *     - `send`: the script has sent some data into the terminal
-     *     - `resize`: the terminal has been resized
-     *   - `data`: the data that was sent or received
-     * - `cols`: the number of columns in the terminal
-     * - `rows`: the number of rows in the terminal
-     * - `text`: the text that was output by the terminal (an array of lines)
+     * {@link ShellSessionCapturedData | session data}.
      *
      * Extra properties may be added to the session by passing the `extra` argument.
      */
     capture(name: string, extra?: Record<string, any>): Promise<void>;
+}
+
+/**
+ * The data captured by {@link ShellSession.capture}.
+ * It may contain extra properties, as specified by the `extra` argument to {@link ShellSession.capture}.
+ *
+ * @public
+ */
+export declare interface ShellSessionCapturedData {
+    /**
+     * The events that occurred during the session, up to the point when `capture()` was called.
+     */
+    events: ShellSessionEvent[];
+    /**
+     * The number of columns in the terminal, as of the time when `capture()` was called.
+     */
+    cols: number;
+    /**
+     * The number of rows in the terminal, as of the time when `capture()` was called.
+     */
+    rows: number;
+    /**
+     * The text snapshot that was rendered to the terminal, as of the time when `capture()` was called.
+     * Each element is a line of text.
+     */
+    text: string[];
+}
+
+/**
+ * An event that occurred during a session.
+ * @public
+ */
+export declare interface ShellSessionEvent {
+    /**
+     * The time at which the event occurred, in milliseconds since the Unix epoch.
+     */
+    time: number;
+    /**
+     * The type of event.
+     */
+    type: 'started' | 'output' | 'send' | 'resize';
+    /**
+     * The data that was sent or received (for `output` and `send` events).
+     */
+    data?: string;
+    /**
+     * The number of columns in the terminal (for `resize` events).
+     */
+    cols?: number;
+    /**
+     * The number of rows in the terminal (for `resize` events).
+     */
+    rows?: number;
 }
 
 /**
