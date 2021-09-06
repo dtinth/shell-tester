@@ -1,0 +1,5 @@
+.API documentation
+* xref:shell-tester.adoc[shell-tester]
+** xref:shell-tester_ShellSession_class.adoc[ShellSession]
+** xref:shell-tester_ShellTester_class.adoc[ShellTester]
+** xref:shell-tester_ShellTesterOptions_interface.adoc[ShellTesterOptions]

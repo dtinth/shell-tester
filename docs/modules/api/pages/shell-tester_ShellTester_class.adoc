@@ -1,0 +1,93 @@
+= class ShellTester
+
+API for the `shell-tester` library. Create a `ShellTester` instance to test your shell setup.
+
+== Constructors
+
+[id="shell-tester_ShellTester_constructor_1"]
+=== (constructor)(options)
+
+========
+
+Constructs a new instance of the `ShellTester` class
+
+.Parameters
+[%header,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|options
+m|xref:shell-tester_ShellTesterOptions_interface.adoc[ShellTesterOptions]
+|The options to create the `ShellTester`.
+|===
+
+.Signature
+[source,typescript]
+----
+constructor(options?: ShellTesterOptions);
+----
+
+========
+
+== Methods
+
+[id="shell-tester_ShellTester_run_member_1"]
+=== run(argv)
+
+========
+
+Runs the registered sessions.
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|argv
+m|string[]
+|The command line arguments. If no argument is passed, it will run all the registered sessions. If an argument is passed, it will run only the session with the matching name.
+
+s|Returns
+m|Promise&lt;void&gt;
+|
+|===
+
+.Signature
+[source,typescript]
+----
+run(argv?: string[]): Promise<void>;
+----
+
+========
+[id="shell-tester_ShellTester_session_member_1"]
+=== session(name, callback)
+
+========
+
+Register a new session to be tested. The session will not be run until `run()` is called.
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|name
+m|string
+|The session name. This can be used to filter the session to be run from the command line.
+
+m|callback
+m|(session: xref:shell-tester_ShellSession_class.adoc[ShellSession]) =&gt; Promise&lt;void&gt;
+|An async function that automates this shell session. The function will be called with a xref:shell-tester_ShellSession_class.adoc[ShellSession] instance.
+
+s|Returns
+m|void
+|
+|===
+
+.Signature
+[source,typescript]
+----
+session(name: string, callback: (session: ShellSession) => Promise<void>): void;
+----
+
+========

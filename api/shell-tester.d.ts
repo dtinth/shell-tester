@@ -1,16 +1,16 @@
-import { Terminal } from 'xterm-headless';
+import * as pty from 'node-pty';
 
 /**
  * @public
  */
 export declare class ShellSession {
+    private _output;
+    private _events;
+    private _listeners;
+    private _ptyProcess;
+    private _stabilizer;
+    private _term;
     /* Excluded from this release type: __constructor */
-    /* Excluded from this release type: _output */
-    /* Excluded from this release type: _events */
-    /* Excluded from this release type: _listeners */
-    /* Excluded from this release type: _ptyProcess */
-    /* Excluded from this release type: _stabilizer */
-    /* Excluded from this release type: _term */
     /**
      * Resizes the terminal.
      */
@@ -19,12 +19,12 @@ export declare class ShellSession {
      * Waits for the given string to be printed on the terminal.
      * Gives up once `timeoutMs` has elapsed.
      */
-    expect(str: any, timeoutMs?: number): Promise<void>;
+    expect(str: string, timeoutMs?: number): Promise<void>;
     /**
      * Calls the given `callback()` function repeatedly until it no longer throws an error.
      * Gives up once `timeoutMs` has elapsed.
      */
-    retry(callback: any, timeoutMs?: number): Promise<any>;
+    retry<T>(callback: () => Promise<T>, timeoutMs?: number): Promise<T>;
     /**
      * Send a string to the terminal.
      *
@@ -33,7 +33,7 @@ export declare class ShellSession {
      *
      * You can also send control characters such as `\x03` (^C).
      */
-    send(data: any): Promise<void>;
+    send(data: string): Promise<void>;
     /**
      * Captures the current terminal state into a file.
      * It also prints the terminal state to the console.
@@ -58,7 +58,7 @@ export declare class ShellSession {
      *
      * Extra properties may be added to the session by passing the `extra` argument.
      */
-    capture(name: any, extra?: {}): Promise<void>;
+    capture(name: string, extra?: Record<string, any>): Promise<void>;
 }
 
 /**
@@ -67,21 +67,18 @@ export declare class ShellSession {
  * @public
  */
 export declare class ShellTester {
+    private _shellCommand;
     /**
-     * @param {object} options - The options to create the `ShellTester`.
-     * @param {string} options.shellCommand - The shell command to run.
+     * @param options - The options to create the `ShellTester`.
      */
-    constructor({ shellCommand }?: {
-        shellCommand: string;
-    });
-    /* Excluded from this release type: _shellCommand */
-    /* Excluded from this release type: _sessionsDefinitions */
+    constructor(options?: ShellTesterOptions);
+    private _sessionsDefinitions;
     /**
      * Register a new session to be tested. The session will not be run until `run()` is called.
      *
-     * @param {string} name - The session name.
+     * @param name - The session name.
      *  This can be used to filter the session to be run from the command line.
-     * @param {(session: ShellSession) => Promise<void>} callback - An async function that automates this shell session.
+     * @param callback - An async function that automates this shell session.
      *  The function will be called with a {@link ShellSession} instance.
      */
     session(name: string, callback: (session: ShellSession) => Promise<void>): void;
@@ -93,14 +90,18 @@ export declare class ShellTester {
      *  If an argument is passed, it will run only the session with the matching name.
      */
     run(argv?: string[]): Promise<void>;
-    /* Excluded from this release type: _runSession */
+    private _runSession;
 }
 
-declare class Stabilizer {
-    _lastTime: number;
-    debounce(): void;
-    get _timeToStabilize(): number;
-    waitUntilStabilized(): Promise<void>;
+/**
+ * @public
+ */
+export declare interface ShellTesterOptions {
+    /**
+     * The command to use for launching the shell.
+     * Defaults to the `SHELL` environment variable, or `sh` if not set.
+     */
+    shellCommand?: string;
 }
 
 export { }

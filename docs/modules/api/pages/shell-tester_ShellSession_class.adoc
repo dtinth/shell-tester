@@ -1,0 +1,174 @@
+= class ShellSession
+
+
+
+== Methods
+
+[id="shell-tester_ShellSession_capture_member_1"]
+=== capture(name, extra)
+
+========
+
+Captures the current terminal state into a file. It also prints the terminal state to the console.
+
+It will be written to `tmp/output/${name}.js` and will begin with `SESSION_DATA=`, followed by the JSON-encoded session data.
+
+The session data will contain:
+
+- `events`: an array of events, each event being an object with the following properties: - `time`: the time at which the event occurred, in milliseconds since the Unix epoch - `type`: the type of event, one of: - `started`: the session has started - `output`: the terminal has output some text - `send`: the script has sent some data into the terminal - `resize`: the terminal has been resized - `data`: the data that was sent or received - `cols`: the number of columns in the terminal - `rows`: the number of rows in the terminal - `text`: the text that was output by the terminal (an array of lines)
+
+Extra properties may be added to the session by passing the `extra` argument.
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|name
+m|string
+|
+
+m|extra
+m|Record&lt;string, any&gt;
+|
+
+s|Returns
+m|Promise&lt;void&gt;
+|
+|===
+
+.Signature
+[source,typescript]
+----
+capture(name: string, extra?: Record<string, any>): Promise<void>;
+----
+
+========
+[id="shell-tester_ShellSession_expect_member_1"]
+=== expect(str, timeoutMs)
+
+========
+
+Waits for the given string to be printed on the terminal. Gives up once `timeoutMs` has elapsed.
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|str
+m|string
+|
+
+m|timeoutMs
+m|number
+|
+
+s|Returns
+m|Promise&lt;void&gt;
+|
+|===
+
+.Signature
+[source,typescript]
+----
+expect(str: string, timeoutMs?: number): Promise<void>;
+----
+
+========
+[id="shell-tester_ShellSession_resize_member_1"]
+=== resize(cols, rows)
+
+========
+
+Resizes the terminal.
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|cols
+m|number
+|
+
+m|rows
+m|number
+|
+
+s|Returns
+m|Promise&lt;void&gt;
+|
+|===
+
+.Signature
+[source,typescript]
+----
+resize(cols?: number, rows?: number): Promise<void>;
+----
+
+========
+[id="shell-tester_ShellSession_retry_member_1"]
+=== retry(callback, timeoutMs)
+
+========
+
+Calls the given `callback()` function repeatedly until it no longer throws an error. Gives up once `timeoutMs` has elapsed.
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|callback
+m|() =&gt; Promise&lt;T&gt;
+|
+
+m|timeoutMs
+m|number
+|
+
+s|Returns
+m|Promise&lt;T&gt;
+|
+|===
+
+.Signature
+[source,typescript]
+----
+retry<T>(callback: () => Promise<T>, timeoutMs?: number): Promise<T>;
+----
+
+========
+[id="shell-tester_ShellSession_send_member_1"]
+=== send(data)
+
+========
+
+Send a string to the terminal.
+
+Note that newline characters will \*\*not\*\* be added automatically. To send a newline, use `\r`.
+
+You can also send control characters such as `\x03` (^C).
+
+.Parameters
+[%header%footer,cols="2,3,4",caption=""]
+|===
+|Name |Type |Description
+
+m|data
+m|string
+|
+
+s|Returns
+m|Promise&lt;void&gt;
+|
+|===
+
+.Signature
+[source,typescript]
+----
+send(data: string): Promise<void>;
+----
+
+========

@@ -4,52 +4,29 @@
 
 ```ts
 
-import { Terminal } from 'xterm-headless';
+import * as pty from 'node-pty';
 
 // @public (undocumented)
 export class ShellSession {
     // @internal
-    constructor(ptyProcess: any);
-    capture(name: any, extra?: {}): Promise<void>;
-    // @internal (undocumented)
-    _events: {
-        time: number;
-        type: string;
-    }[];
-    expect(str: any, timeoutMs?: number): Promise<void>;
-    // @internal (undocumented)
-    _listeners: Set<any>;
-    // @internal (undocumented)
-    _output: string;
-    // @internal (undocumented)
-    _ptyProcess: any;
+    constructor(ptyProcess: pty.IPty);
+    capture(name: string, extra?: Record<string, any>): Promise<void>;
+    expect(str: string, timeoutMs?: number): Promise<void>;
     resize(cols?: number, rows?: number): Promise<void>;
-    retry(callback: any, timeoutMs?: number): Promise<any>;
-    send(data: any): Promise<void>;
-    // Warning: (ae-forgotten-export) The symbol "Stabilizer" needs to be exported by the entry point index.d.ts
-    //
-    // @internal (undocumented)
-    _stabilizer: Stabilizer;
-    // @internal (undocumented)
-    _term: Terminal;
+    retry<T>(callback: () => Promise<T>, timeoutMs?: number): Promise<T>;
+    send(data: string): Promise<void>;
 }
 
 // @public
 export class ShellTester {
-    constructor({ shellCommand }?: {
-        shellCommand: string;
-    });
+    constructor(options?: ShellTesterOptions);
     run(argv?: string[]): Promise<void>;
-    // @internal (undocumented)
-    _runSession({ name, callback }: {
-        name: any;
-        callback: any;
-    }): Promise<void>;
     session(name: string, callback: (session: ShellSession) => Promise<void>): void;
-    // @internal (undocumented)
-    _sessionsDefinitions: any[];
-    // @internal (undocumented)
-    _shellCommand: string;
+}
+
+// @public (undocumented)
+export interface ShellTesterOptions {
+    shellCommand?: string;
 }
 
 // (No @packageDocumentation comment for this package)

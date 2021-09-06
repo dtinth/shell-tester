@@ -1,0 +1,21 @@
+= interface ShellTesterOptions
+
+
+
+== Properties
+
+[id="shell-tester_ShellTesterOptions_shellCommand_member"]
+=== shellCommand
+
+========
+
+The command to use for launching the shell. Defaults to the `SHELL` environment variable, or `sh` if not set.
+
+
+.Signature
+[source,typescript]
+----
+shellCommand?: string;
+----
+
+========
