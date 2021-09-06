@@ -1,4 +1,4 @@
-import pty from 'node-pty'
+import * as pty from 'node-pty'
 import fs from 'fs'
 import mkdirp from 'mkdirp'
 import { Terminal } from 'xterm-headless'
