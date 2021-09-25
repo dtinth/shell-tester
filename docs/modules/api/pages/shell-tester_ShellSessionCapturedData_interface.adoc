@@ -1,6 +1,6 @@
 = interface ShellSessionCapturedData
 
-The data captured by xref:shell-tester_ShellSession_class.adoc#shell-tester_ShellSession_capture_member_1[ShellSession#capture]. It may contain extra properties, as specified by the `extra` argument to xref:shell-tester_ShellSession_class.adoc#shell-tester_ShellSession_capture_member_1[ShellSession#capture].
+The data captured by xref:shell-tester_ShellSession_class.adoc#shell-tester_ShellSession_capture_member_1[ShellSession#capture].
 
 == Properties
 

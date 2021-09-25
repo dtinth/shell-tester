@@ -6,7 +6,7 @@
 
 import * as pty from 'node-pty';
 
-// @public (undocumented)
+// @public
 export class ShellSession {
     // @internal
     constructor(ptyProcess: pty.IPty);
@@ -41,7 +41,7 @@ export class ShellTester {
     session(name: string, callback: (session: ShellSession) => Promise<void>): void;
 }
 
-// @public (undocumented)
+// @public
 export interface ShellTesterOptions {
     shellCommand?: string;
 }

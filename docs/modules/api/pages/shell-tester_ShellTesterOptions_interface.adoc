@@ -1,6 +1,6 @@
 = interface ShellTesterOptions
 
-
+Options you can pass to xref:shell-tester_ShellTester_class.adoc[ShellTester]’s constructor.
 
 == Properties
 

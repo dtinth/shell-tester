@@ -1,6 +1,7 @@
 import * as pty from 'node-pty';
 
 /**
+ * A shell session created by {@link ShellTester.session}.
  * @public
  */
 export declare class ShellSession {
@@ -63,6 +64,8 @@ export declare class ShellSession {
 
 /**
  * The data captured by {@link ShellSession.capture}.
+ *
+ * @remarks
  * It may contain extra properties, as specified by the `extra` argument to {@link ShellSession.capture}.
  *
  * @public
@@ -147,6 +150,7 @@ export declare class ShellTester {
 }
 
 /**
+ * Options you can pass to {@link ShellTester}’s constructor.
  * @public
  */
 export declare interface ShellTesterOptions {

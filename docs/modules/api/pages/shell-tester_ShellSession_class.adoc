@@ -1,6 +1,6 @@
 = class ShellSession
 
-
+A shell session created by xref:shell-tester_ShellTester_class.adoc#shell-tester_ShellTester_session_member_1[ShellTester#session].
 
 == Methods
 
