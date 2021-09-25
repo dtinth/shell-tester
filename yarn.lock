@@ -110,10 +110,10 @@ ajv@~6.12.6:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-api-documenter-yaml-to-antora-asciidoc@^0.0.0-3:
-  version "0.0.0-3"
-  resolved "https://registry.yarnpkg.com/api-documenter-yaml-to-antora-asciidoc/-/api-documenter-yaml-to-antora-asciidoc-0.0.0-3.tgz#950d25374d887b558456f1b776261c2e49c51800"
-  integrity sha512-xsuYkhnxtkWf3AjHhfirmanpQN9nbc0cyiHRxr1LpfAEAwA6aT/rs0/u8Ljyxkgd0tatOBPttAh/Ud4r7QZDnQ==
+api-documenter-yaml-to-antora-asciidoc@^0.0.0-9:
+  version "0.0.0-9"
+  resolved "https://registry.yarnpkg.com/api-documenter-yaml-to-antora-asciidoc/-/api-documenter-yaml-to-antora-asciidoc-0.0.0-9.tgz#620c80fac581fe1aa20328ca64c5e08f53f32bd2"
+  integrity sha512-ISIg5srwAmmiBtZpjKBm7e3DQjIFV4VyyKBovpCqiQxQYn37H3/WzrzfPArmBjqm3RdKwDif9VcB2EEn0g08Lg==
   dependencies:
     "@rushstack/ts-command-line" "^4.9.0"
     glob "^7.1.7"
