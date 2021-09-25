@@ -2,6 +2,8 @@
 
 A shell session created by xref:shell-tester_ShellTester_class.adoc#shell-tester_ShellTester_session_member_1[ShellTester#session].
 
+The constructor for this class is marked as internal. Third-party code should not call the constructor directly or create subclasses that extend the `ShellSession` class.
+
 == Methods
 
 [id="shell-tester_ShellSession_capture_member_1"]
@@ -14,6 +16,8 @@ Captures the current terminal state into a file. It also prints the terminal sta
 It will be written to `tmp/output/${name}.js` and will begin with `SESSION_DATA=`, followed by the JSON-encoded xref:shell-tester_ShellSessionCapturedData_interface.adoc[ShellSessionCapturedData].
 
 Extra properties may be added to the session by passing the `extra` argument.
+
+
 
 .Parameters
 [%header%footer,cols="2,3,4",caption=""]
@@ -47,6 +51,8 @@ capture(name: string, extra?: Record<string, any>): Promise<void>;
 
 Waits for the given string to be printed on the terminal. Gives up once `timeoutMs` has elapsed.
 
+
+
 .Parameters
 [%header%footer,cols="2,3,4",caption=""]
 |===
@@ -79,6 +85,8 @@ expect(str: string, timeoutMs?: number): Promise<void>;
 
 Resizes the terminal.
 
+
+
 .Parameters
 [%header%footer,cols="2,3,4",caption=""]
 |===
@@ -110,6 +118,8 @@ resize(cols?: number, rows?: number): Promise<void>;
 ========
 
 Calls the given `callback()` function repeatedly until it no longer throws an error. Gives up once `timeoutMs` has elapsed.
+
+
 
 .Parameters
 [%header%footer,cols="2,3,4",caption=""]
@@ -146,6 +156,8 @@ Send a string to the terminal.
 Note that newline characters will \*\*not\*\* be added automatically. To send a newline, use `\r`.
 
 You can also send control characters such as `\x03` (^C).
+
+
 
 .Parameters
 [%header%footer,cols="2,3,4",caption=""]

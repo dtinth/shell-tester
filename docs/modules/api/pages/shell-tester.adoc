@@ -2,13 +2,33 @@
 
 
 
+
+
 == Classes
 
-* xref:shell-tester_ShellSession_class.adoc[ShellSession]
-* xref:shell-tester_ShellTester_class.adoc[ShellTester]
+[%header,cols="1,2",caption=""]
+|===
+|Name |Summary
+
+s|xref:shell-tester_ShellSession_class.adoc[ShellSession]
+|A shell session created by xref:shell-tester_ShellTester_class.adoc#shell-tester_ShellTester_session_member_1[ShellTester#session].
+
+s|xref:shell-tester_ShellTester_class.adoc[ShellTester]
+|API for the `shell-tester` library. Create a `ShellTester` instance to test your shell setup.
+|===
 
 == Interfaces
 
-* xref:shell-tester_ShellSessionCapturedData_interface.adoc[ShellSessionCapturedData]
-* xref:shell-tester_ShellSessionEvent_interface.adoc[ShellSessionEvent]
-* xref:shell-tester_ShellTesterOptions_interface.adoc[ShellTesterOptions]
+[%header,cols="1,2",caption=""]
+|===
+|Name |Summary
+
+s|xref:shell-tester_ShellSessionCapturedData_interface.adoc[ShellSessionCapturedData]
+|The data captured by xref:shell-tester_ShellSession_class.adoc#shell-tester_ShellSession_capture_member_1[ShellSession#capture].
+
+s|xref:shell-tester_ShellSessionEvent_interface.adoc[ShellSessionEvent]
+|An event that occurred during a session.
+
+s|xref:shell-tester_ShellTesterOptions_interface.adoc[ShellTesterOptions]
+|Options you can pass to xref:shell-tester_ShellTester_class.adoc[ShellTester]’s constructor.
+|===

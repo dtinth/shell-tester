@@ -2,6 +2,8 @@
 
 Options you can pass to xref:shell-tester_ShellTester_class.adoc[ShellTester]’s constructor.
 
+
+
 == Properties
 
 [id="shell-tester_ShellTesterOptions_shellCommand_member"]
@@ -10,6 +12,8 @@ Options you can pass to xref:shell-tester_ShellTester_class.adoc[ShellTester]’
 ========
 
 The command to use for launching the shell. Defaults to the `SHELL` environment variable, or `sh` if not set.
+
+
 
 
 .Signature

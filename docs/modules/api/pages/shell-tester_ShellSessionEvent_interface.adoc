@@ -2,6 +2,8 @@
 
 An event that occurred during a session.
 
+
+
 == Properties
 
 [id="shell-tester_ShellSessionEvent_cols_member"]
@@ -10,6 +12,8 @@ An event that occurred during a session.
 ========
 
 The number of columns in the terminal (for `resize` events).
+
+
 
 
 .Signature
@@ -27,6 +31,8 @@ cols?: number;
 The data that was sent or received (for `output` and `send` events).
 
 
+
+
 .Signature
 [source,typescript]
 ----
@@ -40,6 +46,8 @@ data?: string;
 ========
 
 The number of rows in the terminal (for `resize` events).
+
+
 
 
 .Signature
@@ -57,6 +65,8 @@ rows?: number;
 The time at which the event occurred, in milliseconds since the Unix epoch.
 
 
+
+
 .Signature
 [source,typescript]
 ----
@@ -70,6 +80,8 @@ time: number;
 ========
 
 The type of event.
+
+
 
 
 .Signature

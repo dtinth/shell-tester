@@ -2,6 +2,8 @@
 
 API for the `shell-tester` library. Create a `ShellTester` instance to test your shell setup.
 
+
+
 == Constructors
 
 [id="shell-tester_ShellTester_constructor_1"]
@@ -10,6 +12,8 @@ API for the `shell-tester` library. Create a `ShellTester` instance to test your
 ========
 
 Constructs a new instance of the `ShellTester` class
+
+
 
 .Parameters
 [%header,cols="2,3,4",caption=""]
@@ -38,6 +42,8 @@ constructor(options?: ShellTesterOptions);
 
 Runs the registered sessions.
 
+
+
 .Parameters
 [%header%footer,cols="2,3,4",caption=""]
 |===
@@ -65,6 +71,8 @@ run(argv?: string[]): Promise<void>;
 ========
 
 Register a new session to be tested. The session will not be run until `run()` is called.
+
+
 
 .Parameters
 [%header%footer,cols="2,3,4",caption=""]
