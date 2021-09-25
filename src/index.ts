@@ -11,6 +11,7 @@ type SessionDefinition = {
 }
 
 /**
+ * Options you can pass to {@link ShellTester}’s constructor.
  * @public
  */
 export interface ShellTesterOptions {
@@ -110,6 +111,7 @@ class Stabilizer {
 }
 
 /**
+ * A shell session created by {@link ShellTester.session}.
  * @public
  */
 export class ShellSession {
@@ -287,6 +289,8 @@ export class ShellSession {
 
 /**
  * The data captured by {@link ShellSession.capture}.
+ *
+ * @remarks
  * It may contain extra properties, as specified by the `extra` argument to {@link ShellSession.capture}.
  *
  * @public
